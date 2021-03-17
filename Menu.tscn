@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/Langar/Langar-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.998
+margin_right = 1.0
+margin_bottom = 0.200012
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 403.0
+margin_top = 222.0
+margin_right = 622.0
+margin_bottom = 376.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 219.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+text = "Consolezinho :v"
+
+[node name="Iniciar" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 35.0
+margin_right = 219.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 2 )
+text = "Iniciar"
+
+[node name="Creditos" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 219.0
+margin_bottom = 113.0
+custom_fonts/font = SubResource( 3 )
+text = "Créditos"
+
+[node name="Sair" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 117.0
+margin_right = 219.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 4 )
+text = "Sair"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Iniciar" to="." method="_on_Iniciar_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Creditos" to="." method="_on_Creditos_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
